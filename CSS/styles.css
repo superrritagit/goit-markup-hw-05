@@ -96,7 +96,8 @@ img{
 }
 
 .menu-item{
-    display: block;
+    display: flex;
+    align-items: center;
     padding-top: 32px;
     padding-bottom: 32px;
 }
@@ -144,6 +145,22 @@ img{
     letter-spacing: 0.02em;
 }
 
+.menu-link{
+    position: relative;
+}
+
+.menu-link::after{
+    content: '';
+    position: absolute;
+
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+
+}
+
 .navigation-list .item + .item{
     margin-left: 50px;
 }
@@ -165,6 +182,9 @@ img{
     ),
     url('../images/bg\ img.jpg');
     max-width: 1600px;
+    margin: 0 auto;
+    background-position: center;
+    background-size: cover;
 }
 
 .solutions-title{
@@ -245,8 +265,12 @@ img{
 }
 
 .prop-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--button-color);
-    padding: 25px 100px 25px 100px;
+    width: 100%;
+    height: 120px;
     margin-bottom: 30px;
     border-radius: 4px;
 }
@@ -305,13 +329,12 @@ img{
 
 .team-card-description{
     padding-top: 30px;
-    padding-bottom: 30px;
     text-align: center;
 }
 
 .team-title{
     margin-bottom: 50px;
-
+    
     color: var(--main-color);
     font-weight: 700;
     font-size: 36px;
@@ -334,6 +357,7 @@ img{
     color: var(--secondary-color);
     font-size: 16px;
     line-height: 1.18;
+    margin-bottom: 16px;
     
 }
 
@@ -372,33 +396,22 @@ img{
     fill: var(--icon-grey-color);
 }
 
-.client-card:hover{
-    border: 1px solid var(--accent-color);
+.client-card .icon{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.client-card .icon:hover,
+.client-card .icon:focus{
     fill: var(--accent-color);
 }
 
-.company1{
-    padding: 23px 65px;
-}
-
-.company2{
-    padding: 19px 65px;
-}
-
-.company3 {
-    padding: 23px 65px;
-}
-
-.company4 {
-    padding: 24px 42px;
-}
-
-.company5 {
-    padding: 24px 53px;
-}
-
-.company6 {
-    padding: 22px 38px;
+.client-card:hover,
+.client-card:focus {
+    border: 1px solid var(--accent-color);
 }
 
 .clients-title{
@@ -442,10 +455,16 @@ img{
    
 }
 
-.join-us-list,
+
 .footer-join-us-list{
     display: flex;
     gap: 10px;
+}
+
+.join-us-list{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
 }
 
 .join-us-list .link{
@@ -459,12 +478,15 @@ img{
     width: 44px;
     height: 44px;
     text-align: center;
-    padding-top: 12px;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     fill: currentColor;
 }
 
-.ellipse:hover{
+
+.ellipse:focus,
+.ellipse:hover {
     background-color: var(--accent-color);
     fill: var(--white-color);
 }
@@ -513,6 +535,15 @@ img{
     justify-content: center;
     margin-bottom: 56px;
 }
+/* .menu-button:hover,
+.menu-button:focus{
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+    0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+   
+} */
+
 
 .project-title{
 
@@ -538,6 +569,16 @@ img{
     flex-wrap: wrap;
 }
 
+.projects-list .item{
+    display: block;
+}
+
+.projects-list .item:hover,
+.projects-list .item:focus{
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+   
+}
+
 .card-description{
     padding-top: 20px;
     padding-bottom: 20px;
@@ -546,7 +587,45 @@ img{
     border-right: 1px solid #EEEEEE;
     border-left: 1px solid #EEEEEE;
     border-bottom: 1px solid #EEEEEE;
-    
+}
+
+.project-card{
+    position: relative;
+    overflow: hidden;
+}
+
+
+.projects-list .item:hover .card-overlay{
+    opacity: 1;
+    transform: translatey(0);
+
+}
+
+
+.card-overlay{
+    position: absolute;
+    opacity: 0;
+
+    bottom: 0;   
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(33, 150, 243, 0.9);
+
+    transform: translatey(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.overlay-description{
+    padding: 63px 24px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 156%;
+    letter-spacing: 0.03em;
+    color: var(--white-color);
+
 }
 
 /* Кнопки */
@@ -579,10 +658,19 @@ img{
     cursor: pointer;
 }
 
+.menu-button:hover,
+.menu-button:focus{
+box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+        0px 1px 2px rgba(0, 0, 0, 0.08),
+        0px 2px 2px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+}
+
 .grey-button:hover,
 .grey-button:focus{
     background-color: var(--accent-color);
     color: var(--white-color);
+
 }
 
 /* Для всех слов голубого цвета */
