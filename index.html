@@ -49,24 +49,24 @@
 
             <ul class="navigation-list list">
               <li class="item">
-                <a class="link object-hover accent menu-item menu-link" href="./index.html"
+                <a class="link object-hover accent menu-item menu-link-active" href="./index.html"
                   >Студія</a
                 >
               </li>
               <li class="item">
-                <a class="link object-hover menu-item" target="_blank" href="./portfolio.html"
+                <a class="link object-hover menu-item menu-link" target="_blank" href="./portfolio.html"
                   >Портфоліо</a
                 >
               </li>
-              <li class="item"><a class="link object-hover menu-item" href="#">Контакти</a></li>
+              <li class="item"><a class="link object-hover menu-item menu-link" href="#">Контакти</a></li>
             </ul>
           </nav>
 
           <ul class="contacts list">
             <li class="item">
-              <a
+              <a 
                 href="mailto:info@devstudio.com"
-                class="link secondary-color object-hover menu-item"
+                class="link secondary-color object-hover menu-item "
               >
                 <svg class="icon-mail" width="16" height="12">
                   <use href="./images/symbol-defs.svg#icon-mail"></use>
@@ -93,7 +93,7 @@
       <section class="solutions">
         <div class="conteiner">
           <h1 class="solutions-title">Ефективні рішення для вашого бізнесу</h1>
-          <button class="primary-button" type="button">Замовити послугу</button>
+          <button data-modal-open class="primary-button" type="button">Замовити послугу</button>
         </div>
       </section>
 
@@ -387,15 +387,19 @@
             </li>
           </ul>
         </div>
-
-        <div class="backdrop">
+<!-- Бэкдроп + модалка -->
+        <div class="backdrop is-hidden" data-modal >
           <div class="modal">
-            <div class="modal-close-btn"></div>
+            <button data-modal-close type="button" class="modal-close-btn">
+              <svg class="modal-close-icon" width="18" heigth="18"><use href="./images/symbol-defs.svg#icon-close"></use></svg>
+            </button>
           </div>
         </div>
 
       </section>
     </main>
+
+      <script src="./js/modal.js"></script>
 
     <!-- Футер -->
 
