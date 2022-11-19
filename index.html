@@ -54,19 +54,24 @@
                 >
               </li>
               <li class="item">
-                <a class="link object-hover menu-item menu-link" target="_blank" href="./portfolio.html"
+                <a
+                  class="link object-hover menu-item menu-link"
+                  target="_blank"
+                  href="./portfolio.html"
                   >Портфоліо</a
                 >
               </li>
-              <li class="item"><a class="link object-hover menu-item menu-link" href="#">Контакти</a></li>
+              <li class="item">
+                <a class="link object-hover menu-item menu-link" href="#">Контакти</a>
+              </li>
             </ul>
           </nav>
 
           <ul class="contacts list">
             <li class="item">
-              <a 
+              <a
                 href="mailto:info@devstudio.com"
-                class="link secondary-color object-hover menu-item "
+                class="link secondary-color object-hover menu-item"
               >
                 <svg class="icon-mail" width="16" height="12">
                   <use href="./images/symbol-defs.svg#icon-mail"></use>
@@ -94,6 +99,17 @@
         <div class="conteiner">
           <h1 class="solutions-title">Ефективні рішення для вашого бізнесу</h1>
           <button data-modal-open class="primary-button" type="button">Замовити послугу</button>
+        </div>
+
+        <!-- Бэкдроп + модалка -->
+        <div class="backdrop is-hidden" data-modal>
+          <div class="modal">
+            <button data-modal-close type="button" class="modal-close-btn">
+              <svg class="modal-close-icon" width="18" heigth="18">
+                <use href="./images/symbol-defs.svg#icon-close"></use>
+              </svg>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -387,19 +403,8 @@
             </li>
           </ul>
         </div>
-<!-- Бэкдроп + модалка -->
-        <div class="backdrop is-hidden" data-modal >
-          <div class="modal">
-            <button data-modal-close type="button" class="modal-close-btn">
-              <svg class="modal-close-icon" width="18" heigth="18"><use href="./images/symbol-defs.svg#icon-close"></use></svg>
-            </button>
-          </div>
-        </div>
-
       </section>
     </main>
-
-      <script src="./js/modal.js"></script>
 
     <!-- Футер -->
 
@@ -468,5 +473,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
